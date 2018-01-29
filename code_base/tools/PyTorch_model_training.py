@@ -202,6 +202,7 @@ def prepare_data_image_list(cf):
             prepared_data = tuple(np.load(cf.dataloader_load_prepare_data_path))
         else:
             import pickle
+            cf.sequence_name = 'SYNTHIA-SEQS-01'
             with open(os.path.join(cf.shared_path, cf.problem_type, cf.sequence_name + '_train.npy'), 'rb') as fp:
                 train_data = pickle.load(fp)
             with open(os.path.join(cf.shared_path, cf.problem_type, cf.sequence_name + '_valid.npy'), 'rb') as fp:
